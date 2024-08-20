@@ -44,7 +44,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onLogOut() {
-    this.authService.logout();
+  onLogOut(val?: string) {
+    if (val) {
+      return;
+    } else {
+      val = '';
+    }
+    this.authService.logout(val);
   }
 }

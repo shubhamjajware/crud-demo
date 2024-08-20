@@ -10,14 +10,14 @@ export class AuthService {
   constructor(private router: Router) {}
 
   login(username: string, password: string): boolean {
-    if (username === 'user' && password === 'password') {
+    if (username === 'user' && password === 'sanaya@2#') {
       this.isAuthenticated = true;
       return true;
     }
     return false;
   }
 
-  logout(): void {
+  logout(val?: string): void {
     this.isAuthenticated = false;
     this.router.navigate(['/login']);
   }

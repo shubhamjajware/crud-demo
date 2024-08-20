@@ -2,6 +2,6 @@ import { Emp } from "./emp";
 
 export class EmployeeModel {
     status: string;
-    data: Emp;
+    data: Emp[];
     message: string;
 }
