@@ -1,0 +1,45 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(64, 64, 180);
+    margin: 2px;
+    width: 60px !important;
+  }
+
+  .animate {
+    
+    animation: cust-animate 1s infinite;
+  }
+//-webkit-
+  @keyframes cust-animate {
+    0%, 49% {
+        color: rgb(117,209,63);
+    }
+    50%, 100% {
+        color: #e50000;
+    }
+}
