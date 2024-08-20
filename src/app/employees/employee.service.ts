@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeService {
   empData = {};
-  baseUrl = 'https://dummy.restapiexample.com/api/v1/employee';
+  baseUrl = 'https://dummy.restapiexample.com/api/v1/employees';
   // baseUrl = './src/api/employee.json'
   id = 1;
   uid = 21;
@@ -18,11 +18,11 @@ export class EmployeeService {
   constructor(private httpClient: HttpClient) { }
 
   getEmployee(): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/${this.id}`);
+    return this.httpClient.get("https://dummy.restapiexample.com/api/v1/employees");
   }
 
   postEmployee(data: any): Observable<any> {
-    return this.httpClient.post("https://dummy.restapiexample.com/api/v1/create", data)
+    return this.httpClient.post("https://dummy.restapiexample.com/api/v1/create", data);
   }
 
   updateEmployee(id: number, data: any): Observable<any> {

@@ -10,7 +10,7 @@ import { FlexLayoutModule, FlexModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MaterialCustomModule } from './material-custom.module';
-import {provideAnimations} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule, provideAnimations} from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -28,7 +28,8 @@ import {provideAnimations} from '@angular/platform-browser/animations'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialCustomModule
+    MaterialCustomModule,
+    BrowserAnimationsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

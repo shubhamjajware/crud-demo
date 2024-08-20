@@ -7,6 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { FormGroup } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { Emp } from '../model/emp';
 
 @Component({
   selector: 'app-employees',
@@ -16,10 +17,10 @@ import { Router } from '@angular/router';
   viewProviders: []
 })
 export class EmployeesComponent implements OnInit {
+  
   title = 'Emp Data';
-  employee: EmployeeModel;
-  dataSource = new MatTableDataSource<EmployeeModel>;
-  displayedColumns: string[] = ['status', 'message','id', 'name'];
+  dataSource = new MatTableDataSource<Emp>();
+  displayedColumns: string[] = ['id', 'name', 'age', 'salary'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -27,12 +28,12 @@ export class EmployeesComponent implements OnInit {
   ngOnInit(): void {
     if (this.authService.getAuthStatus()==false) {
       this.router.navigate(['/login']);
-      // event?.preventDefault();
     } else {
       this.employeeService.getEmployee().subscribe((data: EmployeeModel) => {
-        console.log('data: ', data, ' data.status: ', data.status, ' data.data: ', data.data);
-        this.employee = data;
-        console.log(this.employee);
+        console.log(data.data);
+        this.dataSource.data = data.data;
+        this.dataSource.paginator = this.paginator
+        
       });
     }
     
